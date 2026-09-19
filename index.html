@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Inspirations of the Universe by Arinde Maurice. An interactive Solar System and astronomy research website." />
+  <meta name="author" content="Arinde Maurice" />
+  <title>Inspirations of the Universe | Arinde Maurice</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Inspirations of the Universe home">
+      <span class="brand-mark">✦</span>
+      <span>
+        <strong>Inspirations of the Universe</strong>
+        <small>by Arinde Maurice</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+
+    <nav id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#contents">Contents</a>
+      <a href="#night-sky">Night Sky</a>
+      <a href="#planets">Planets</a>
+      <a href="#deep-space">Deep Space</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About Me</a>
+      <a href="#sources">Sources</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="stars stars-a"></div>
+      <div class="stars stars-b"></div>
+      <div class="hero-orbit orbit-1"></div>
+      <div class="hero-orbit orbit-2"></div>
+      <div class="hero-orbit orbit-3"></div>
+      <div class="sun-core" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">A personal astronomy research project</p>
+        <h1>Inspirations of the Universe</h1>
+        <p class="hero-lead">
+          Explore our cosmic neighborhood through planets, moons, stars, comets,
+          asteroids, eclipses, space missions and the biggest questions still unanswered.
+        </p>
+        <p class="hero-byline">Created by <strong>Arinde Maurice</strong> • Computer Science student • technology & connectivity professional • aspiring future MIT student</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contents">Explore the research</a>
+          <a class="btn btn-ghost" href="#about">Meet the creator</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="contents">
+      <div class="section-heading">
+        <p class="eyebrow">01 / Explore</p>
+        <h2>Table of Contents</h2>
+        <p>Start anywhere. The universe is not known for following a tidy table of contents, so neither do we.</p>
+      </div>
+
+      <div class="contents-grid">
+        <a class="content-card" href="#sun"><span>☀️</span><h3>The Sun</h3><p>Structure, fusion, solar wind, activity and the Sun's future.</p></a>
+        <a class="content-card image-content-card" href="#planets"><span class="content-thumb"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg" alt="Real image of Jupiter"></span><h3>The Planets</h3><p>All eight planets, their properties, atmospheres and missions.</p></a>
+        <a class="content-card" href="#moons"><span>🌙</span><h3>Moons</h3><p>Earth's Moon and the strangest satellites in the Solar System.</p></a>
+        <a class="content-card" href="#dwarf-planets"><span>🌑</span><h3>Dwarf Planets</h3><p>Ceres, Pluto, Haumea, Makemake, Eris and more candidates.</p></a>
+        <a class="content-card" href="#small-bodies"><span>☄️</span><h3>Comets & Asteroids</h3><p>Ancient leftovers, near-Earth objects and Solar System debris.</p></a>
+        <a class="content-card" href="#outer-system"><span>🌌</span><h3>Beyond Neptune</h3><p>Kuiper Belt, scattered disk, Oort Cloud and the Solar System's frontier.</p></a>
+        <a class="content-card" href="#formation"><span>💫</span><h3>How It Formed</h3><p>From a collapsing cloud to a complex planetary system.</p></a>
+        <a class="content-card" href="#exploration"><span>🚀</span><h3>Space Exploration</h3><p>Voyager, New Horizons, Parker, Europa Clipper, Lucy and more.</p></a>
+        <a class="content-card" href="#life"><span>🧬</span><h3>Life Beyond Earth</h3><p>Europa, Enceladus, Titan, Mars and what scientists actually know.</p></a>
+        <a class="content-card" href="#mysteries"><span>❓</span><h3>Unsolved Mysteries</h3><p>Planet formation, Planet Nine, oceans, life and the Oort Cloud.</p></a>
+        <a class="content-card" href="motion.html"><span>🌀</span><h3>Cosmic Motion Lab</h3><p>Watch the planets orbit and explore a visual model of galactic motion.</p></a>
+        <a class="content-card" href="#gallery"><span>🖼️</span><h3>Image Gallery</h3><p>Visual research boards plus live NASA image searches.</p></a>
+        <a class="content-card" href="#evidence"><span>🔬</span><h3>Evidence Lab</h3><p>Findings paired with images, missions, measurements and primary-source proof.</p></a>
+        <a class="content-card" href="#findings"><span>📝</span><h3>My Findings</h3><p>Create and save your own observations or research notes in the browser.</p></a>
+        <a class="content-card" href="#nasa-facts"><span>🛰️</span><h3>NASA Fact Explorer</h3><p>Search the curated NASA research vault by topic, object or mission.</p></a>
+        <a class="content-card" href="#sources"><span>📚</span><h3>Research Sources</h3><p>NASA, Timeanddate, ESA, JPL and other reference material.</p></a>
+      </div>
+    </section>
+
+    <section class="section panel" id="night-sky">
+      <div class="section-heading">
+        <p class="eyebrow">02 / Observe</p>
+        <h2>Night Sky Dashboard</h2>
+        <p>A location-aware concept inspired by the useful astronomy tools found on Timeanddate.</p>
+      </div>
+
+      <div class="dashboard-controls">
+        <label>
+          Location
+          <select id="locationSelect">
+            <option value="kampala">Kampala, Uganda</option>
+            <option value="nairobi">Nairobi, Kenya</option>
+            <option value="london">London, UK</option>
+            <option value="newyork">New York, USA</option>
+          </select>
+        </label>
+        <label>
+          Date
+          <input type="date" id="skyDate" />
+        </label>
+        <button class="btn btn-primary" id="updateSky" type="button">Update sky</button>
+        <button class="btn btn-ghost" id="useLocation" type="button">📍 Use my location</button>
+      </div>
+
+      <div class="sky-summary" id="skySummary"></div>
+
+      <div class="sky-cards" id="skyCards"></div>
+
+      <div class="tool-link-wrap">
+        <a class="btn btn-ghost" href="https://www.timeanddate.com/astronomy/night/" target="_blank" rel="noopener">Open Timeanddate Night Sky ↗</a>
+      </div>
+    </section>
+
+    <section class="section" id="sun">
+      <div class="section-heading">
+        <p class="eyebrow">03 / Our Star</p>
+        <h2>The Sun</h2>
+      </div>
+      <div class="split-layout">
+        <div class="visual-card sun-visual">
+          <img src="images/sun.svg" alt="Stylized illustration of the Sun" />
+        </div>
+        <div class="text-card">
+          <p>
+            The Sun is a roughly 4.6-billion-year-old G-type main-sequence star and the dominant source of mass and energy in the Solar System. Its core reaches temperatures of about 15 million °C, where hydrogen fusion produces helium and releases energy.
+          </p>
+          <div class="stat-grid">
+            <div><span>Diameter</span><strong>~1.39 million km</strong></div>
+            <div><span>Core</span><strong>~15 million °C</strong></div>
+            <div><span>Surface</span><strong>~5,500 °C</strong></div>
+            <div><span>Age</span><strong>~4.6 billion years</strong></div>
+          </div>
+          <p class="note">The solar wind and magnetic activity extend the Sun's influence far beyond the planets through the heliosphere.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel" id="planets">
+      <div class="section-heading">
+        <p class="eyebrow">04 / Worlds</p>
+        <h2>The Eight Planets</h2>
+        <p>Search, filter and inspect the core facts from the research.</p>
+      </div>
+
+      <div class="filter-row">
+        <input id="planetSearch" type="search" placeholder="Search a planet..." aria-label="Search planets" />
+        <select id="planetType">
+          <option value="all">All types</option>
+          <option value="Rocky">Rocky planets</option>
+          <option value="Gas giant">Gas giants</option>
+          <option value="Ice giant">Ice giants</option>
+        </select>
+      </div>
+
+      <div class="planet-grid" id="planetGrid"></div>
+    </section>
+
+    <section class="section" id="moons">
+      <div class="section-heading">
+        <p class="eyebrow">05 / Natural Satellites</p>
+        <h2>Moons Worth Knowing</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="info-card"><img src="images/moon.svg" alt="Illustration of Earth's Moon"><h3>Earth's Moon</h3><p>Our natural satellite drives tides, helps stabilize Earth's axial orientation and has been explored by human and robotic missions.</p></article>
+        <article class="info-card"><img src="images/europa.svg" alt="Illustration of Europa"><h3>Europa</h3><p>Jupiter's icy moon shows strong evidence for a subsurface salty ocean, making it a major astrobiology target.</p></article>
+        <article class="info-card"><img src="images/enceladus.svg" alt="Illustration of Enceladus"><h3>Enceladus</h3><p>Saturn's bright icy moon ejects water-rich plumes from a subsurface ocean into space.</p></article>
+        <article class="info-card"><img src="images/titan.svg" alt="Illustration of Titan"><h3>Titan</h3><p>Saturn's largest moon has a thick nitrogen-rich atmosphere and a methane-and-ethane weather cycle.</p></article>
+      </div>
+    </section>
+
+    <section class="section panel" id="dwarf-planets">
+      <div class="section-heading"><p class="eyebrow">06 / Dwarf Worlds</p><h2>Officially Recognized Dwarf Planets</h2></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Object</th><th>Region</th><th>Notable feature</th></tr></thead>
+          <tbody>
+            <tr><td>Ceres</td><td>Main asteroid belt</td><td>Only officially recognized dwarf planet in the inner Solar System</td></tr>
+            <tr><td>Pluto</td><td>Kuiper Belt</td><td>Five known moons and a nitrogen-ice surface</td></tr>
+            <tr><td>Haumea</td><td>Kuiper Belt</td><td>Rapid rotation and a known ring</td></tr>
+            <tr><td>Makemake</td><td>Kuiper Belt</td><td>Distant icy world with a small moon</td></tr>
+            <tr><td>Eris</td><td>Scattered disk</td><td>Pluto-sized object that helped drive the 2006 planet-definition debate</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="small-bodies">
+      <div class="section-heading"><p class="eyebrow">07 / Leftovers</p><h2>Comets & Asteroids</h2></div>
+      <div class="split-layout reverse-mobile">
+        <div class="text-card">
+          <h3>Asteroids</h3>
+          <p>Most known asteroids occupy the main belt between Mars and Jupiter, while near-Earth objects can approach Earth's orbital neighborhood.</p>
+          <h3>Comets</h3>
+          <p>Comets are icy, dusty bodies. Solar heating can create a coma and tails as frozen material becomes gas and dust.</p>
+          <h3>Bennu & OSIRIS-REx</h3>
+          <p>NASA's OSIRIS-REx returned 121.6 grams of material from asteroid Bennu to Earth in 2023 for laboratory study.</p>
+        </div>
+        <div class="visual-card"><img src="images/comet.svg" alt="Illustration of a comet"></div>
+      </div>
+    </section>
+
+    <section class="section panel" id="outer-system">
+      <div class="section-heading"><p class="eyebrow">08 / Frontier</p><h2>Beyond Neptune</h2></div>
+      <div class="feature-grid three">
+        <article class="info-card"><h3>Kuiper Belt</h3><p>An icy, disk-like population beyond Neptune containing Pluto and many other trans-Neptunian objects.</p></article>
+        <article class="info-card"><h3>Scattered Disk</h3><p>A more dynamically disturbed population with highly tilted and elongated orbits.</p></article>
+        <article class="info-card"><h3>Oort Cloud</h3><p>A hypothesized distant shell of icy bodies inferred mainly from the orbits of long-period comets. It has not been directly observed.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="formation">
+      <div class="section-heading"><p class="eyebrow">09 / Origins</p><h2>How the Solar System Formed</h2></div>
+      <div class="timeline">
+        <div><span>01</span><h3>Cloud</h3><p>A cold molecular cloud of gas and dust existed before the Solar System formed.</p></div>
+        <div><span>02</span><h3>Collapse</h3><p>Gravity caused material to collapse and spin into a flattened protoplanetary disk.</p></div>
+        <div><span>03</span><h3>Sun</h3><p>Most of the mass gathered in the central region and the young Sun formed.</p></div>
+        <div><span>04</span><h3>Planetesimals</h3><p>Dust and rock collided and accumulated into larger solid bodies.</p></div>
+        <div><span>05</span><h3>Planets</h3><p>Repeated collisions and gravity produced the planets, moons and surviving small bodies.</p></div>
+      </div>
+    </section>
+
+    <section class="section panel" id="exploration">
+      <div class="section-heading"><p class="eyebrow">10 / Human Exploration</p><h2>Space Missions</h2></div>
+      <div class="feature-grid">
+        <article class="info-card"><h3>Voyager 1 & 2</h3><p>Explored the giant planets and later crossed the heliopause into interstellar space.</p></article>
+        <article class="info-card"><h3>New Horizons</h3><p>Visited Pluto in 2015 and Arrokoth in 2019, the most distant object explored close-up.</p></article>
+        <article class="info-card"><h3>Parker Solar Probe</h3><p>Flies through the Sun's outer atmosphere and studies the solar wind and corona.</p></article>
+        <article class="info-card"><h3>Europa Clipper</h3><p>Travels to Jupiter to study Europa and investigate whether its environment could support life.</p></article>
+        <article class="info-card"><h3>Lucy</h3><p>Visits Jupiter Trojan asteroids to investigate primitive bodies that preserve early Solar System material.</p></article>
+        <article class="info-card"><h3>Dragonfly</h3><p>A nuclear-powered rotorcraft mission designed to explore Titan's organic-rich environment.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="life">
+      <div class="section-heading"><p class="eyebrow">11 / Astrobiology</p><h2>Life Beyond Earth</h2><p>Potentially habitable does not mean inhabited. Evidence matters.</p></div>
+      <div class="feature-grid four">
+        <article class="info-card compact"><h3>Mars</h3><p>Ancient river and lake environments show that Mars once had much more surface water.</p></article>
+        <article class="info-card compact"><h3>Europa</h3><p>A subsurface ocean may interact with a rocky interior beneath an icy shell.</p></article>
+        <article class="info-card compact"><h3>Enceladus</h3><p>Water-rich plumes provide an unusual opportunity to sample material from an underground ocean.</p></article>
+        <article class="info-card compact"><h3>Titan</h3><p>Complex organic chemistry and a methane cycle make Titan an important laboratory for prebiotic chemistry.</p></article>
+      </div>
+    </section>
+
+    <section class="section deep-space" id="deep-space">
+      <div class="section-heading">
+        <p class="eyebrow">12 / Deep Space</p>
+        <h2>Then we leave home.</h2>
+        <p>Stars forge the elements that build planets and life. Galaxies evolve across billions of years, while black holes reshape the space around them. The observable universe contains a story far larger than our Solar System.</p>
+      </div>
+
+      <div class="deep-space-grid">
+        <article class="space-card">
+          <div class="space-icon">⭐</div><div class="space-number">01</div>
+          <h3>Stars</h3>
+          <p>Giant spheres of plasma powered by nuclear fusion. Stars are born inside molecular clouds, evolve through different stages and can leave behind white dwarfs, neutron stars or black holes.</p>
+          <div class="space-tags"><span>Fusion</span><span>Supernovae</span><span>Stellar Evolution</span></div>
+        </article>
+        <article class="space-card">
+          <div class="space-icon">🌌</div><div class="space-number">02</div>
+          <h3>Galaxies</h3>
+          <p>Vast systems containing stars, gas, dust, dark matter and planetary systems. Spiral, elliptical and irregular galaxies form part of the universe's evolving large-scale structure.</p>
+          <div class="space-tags"><span>Spiral</span><span>Elliptical</span><span>Irregular</span></div>
+        </article>
+        <article class="space-card">
+          <div class="space-icon">🕳️</div><div class="space-number">03</div>
+          <h3>Black Holes</h3>
+          <p>Regions of spacetime where gravity is so extreme that nothing crossing the event horizon can escape. Their gravity can influence nearby stars, gas and galactic environments.</p>
+          <div class="space-tags"><span>Gravity</span><span>Event Horizon</span><span>Spacetime</span></div>
+        </article>
+        <article class="space-card">
+          <div class="space-icon">✨</div><div class="space-number">04</div>
+          <h3>Cosmic Web</h3>
+          <p>On the largest scales, galaxies are arranged along immense filaments of matter separated by vast cosmic voids. Together, these structures form the cosmic web.</p>
+          <div class="space-tags"><span>Filaments</span><span>Dark Matter</span><span>Cosmic Structure</span></div>
+        </article>
+      </div>
+
+      <div class="deep-space-footer"><span>THE UNIVERSE DOESN'T END HERE</span><div class="cosmic-line"></div><span>KEEP EXPLORING →</span></div>
+    </section>
+
+    <section class="section panel" id="gallery">
+      <div class="section-heading"><p class="eyebrow">12 / Visual Research</p><h2>Universe Image Gallery</h2><p>Local illustrations keep the site usable offline. The NASA Image Library explorer below can pull current NASA imagery by topic, with source links and credits.</p></div>
+      <div class="gallery-toolbar">
+        <button class="filter-chip active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="sun">Sun</button>
+        <button class="filter-chip" data-filter="planets">Planets</button>
+        <button class="filter-chip" data-filter="moons">Moons</button>
+        <button class="filter-chip" data-filter="space">Space</button>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <figure class="gallery-card" data-category="sun"><img src="images/sun.svg" alt="Stylized Sun"><figcaption><strong>The Sun</strong><span>Our system's star</span></figcaption></figure>
+        <figure class="gallery-card" data-category="planets"><img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" alt="Earth photographed from Apollo 17" loading="lazy"><figcaption><strong>Earth</strong><span>NASA Apollo 17 photograph</span></figcaption></figure>
+        <figure class="gallery-card" data-category="planets"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg" alt="Mercury real image" loading="lazy"><figcaption><strong>Mercury</strong><span>NASA/JPL/USGS imagery</span></figcaption></figure>
+        <figure class="gallery-card" data-category="planets"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" alt="Venus real image" loading="lazy"><figcaption><strong>Venus</strong><span>NASA/JPL-Caltech imagery</span></figcaption></figure>
+        <figure class="gallery-card" data-category="planets"><img src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" alt="Mars real image" loading="lazy"><figcaption><strong>Mars</strong><span>NASA/JPL/ESA imagery</span></figcaption></figure>
+        <figure class="gallery-card" data-category="planets"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg" alt="Jupiter real image" loading="lazy"><figcaption><strong>Jupiter</strong><span>NASA/JPL/USGS imagery</span></figcaption></figure>
+        <figure class="gallery-card" data-category="planets"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg" alt="Saturn real image" loading="lazy"><figcaption><strong>Saturn</strong><span>NASA/JPL/SSI imagery</span></figcaption></figure>
+        <figure class="gallery-card" data-category="planets"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/psd/solar/2023/09/p/i/a/1/PIA18182-1.jpg?crop=faces%2Cfocalpoint&fit=clip&h=1720&w=1720" alt="Uranus photographed by Voyager 2" loading="lazy"><figcaption><strong>Uranus</strong><span>NASA/JPL Voyager 2</span></figcaption></figure>
+        <figure class="gallery-card" data-category="planets"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/psd/solar/2023/09/p/i/a/0/PIA01492-1.jpg?crop=faces%2Cfocalpoint&fit=clip&h=2185&w=2188" alt="Neptune photographed by Voyager 2" loading="lazy"><figcaption><strong>Neptune</strong><span>NASA/JPL Voyager 2</span></figcaption></figure>
+        <figure class="gallery-card" data-category="moons"><img src="images/moon.svg" alt="Stylized Moon"><figcaption><strong>Moon</strong><span>Earth's natural satellite</span></figcaption></figure>
+        <figure class="gallery-card" data-category="moons"><img src="images/europa.svg" alt="Stylized Europa"><figcaption><strong>Europa</strong><span>Icy moon with a subsurface ocean</span></figcaption></figure>
+        <figure class="gallery-card" data-category="moons"><img src="images/enceladus.svg" alt="Stylized Enceladus"><figcaption><strong>Enceladus</strong><span>Water-rich plumes</span></figcaption></figure>
+        <figure class="gallery-card" data-category="moons"><img src="images/titan.svg" alt="Stylized Titan"><figcaption><strong>Titan</strong><span>Methane weather and thick atmosphere</span></figcaption></figure>
+        <figure class="gallery-card" data-category="space"><img src="images/comet.svg" alt="Stylized Comet"><figcaption><strong>Comet</strong><span>Icy body becoming active near the Sun</span></figcaption></figure>
+        <figure class="gallery-card" data-category="space"><img src="images/solar-system.svg" alt="Stylized Solar System"><figcaption><strong>Solar System</strong><span>A dynamic planetary system</span></figcaption></figure>
+      </div>
+
+      <div class="nasa-image-lab">
+        <div class="lab-heading">
+          <div>
+            <p class="eyebrow">NASA IMAGE LIBRARY</p>
+            <h3>Search real NASA imagery</h3>
+            <p>Search the NASA Image and Video Library from the site. Results carry their NASA item link and credit text.</p>
+          </div>
+          <form id="nasaImageForm" class="inline-form">
+            <input id="nasaImageQuery" type="search" value="James Webb galaxy" placeholder="Try: Europa, Bennu, Mars, galaxies..." aria-label="NASA image search">
+            <button class="btn btn-primary" type="submit">Search NASA</button>
+          </form>
+        </div>
+        <div id="nasaImageStatus" class="lab-status" aria-live="polite">Ready to search NASA imagery.</div>
+        <div id="nasaImageGrid" class="nasa-image-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="evidence">
+      <div class="section-heading"><p class="eyebrow">13 / Evidence Lab</p><h2>Findings with proof</h2><p>Each item separates the finding from the evidence. Use primary-source links, mission imagery and measurements rather than turning guesses into facts.</p></div>
+      <div id="evidenceGrid" class="evidence-grid"></div>
+    </section>
+
+    <section class="section panel" id="findings">
+      <div class="section-heading"><p class="eyebrow">14 / Your Research Notebook</p><h2>Create a finding</h2><p>Add your own observation, hypothesis or research note. Your entries are saved in this browser until you delete them.</p></div>
+      <form id="findingForm" class="finding-form">
+        <div class="form-grid">
+          <label>Title<input id="findingTitle" required maxlength="100" placeholder="e.g. Comparing planetary orbital periods"></label>
+          <label>Category<select id="findingCategory"><option>Observation</option><option>Hypothesis</option><option>Research note</option><option>Project idea</option></select></label>
+          <label class="full">Finding / observation<textarea id="findingText" required maxlength="700" placeholder="Write what you found and what it means."></textarea></label>
+          <label>Evidence URL<input id="findingUrl" type="url" placeholder="https://..."></label>
+          <label>Image URL<input id="findingImage" type="url" placeholder="https://..."></label>
+        </div>
+          <div class="finding-actions">
+          <button class="btn btn-primary" type="submit">Save finding</button>
+          <button class="btn btn-ghost" type="button" id="exportFindings">Export findings</button>
+          <button class="btn btn-danger" type="button" id="clearFindings">Clear all</button>
+        </div>
+      </form>
+      <div id="findingStatus" class="lab-status" aria-live="polite"></div>
+      <div id="myFindings" class="my-findings"></div>
+    </section>
+
+    <section class="section" id="mysteries">
+      <div class="section-heading"><p class="eyebrow">13 / Questions</p><h2>Big Unsolved Mysteries</h2></div>
+      <div class="mystery-list">
+        <article><span>01</span><div><h3>How exactly did the planets assemble?</h3><p>The broad formation model is strong, but the precise sequence of migration, collisions and atmosphere building remains an active research area.</p></div></article>
+        <article><span>02</span><div><h3>Does life exist elsewhere?</h3><p>Earth is still the only confirmed world with life. Potentially habitable environments are not proof of biology.</p></div></article>
+        <article><span>03</span><div><h3>Why is Venus so different from Earth?</h3><p>Similar size and composition led to dramatically different atmospheric and climate histories.</p></div></article>
+        <article><span>04</span><div><h3>What is the Oort Cloud actually like?</h3><p>Its existence is inferred from comet orbits because the cloud is too distant for direct observation.</p></div></article>
+        <article><span>05</span><div><h3>Is there a Planet Nine?</h3><p>A hypothetical distant planet has been proposed from patterns in distant-object orbits, but no such planet has been directly detected.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section panel" id="nasa-facts">
+      <div class="section-heading"><p class="eyebrow">15 / NASA Research Vault</p><h2>Fact Explorer</h2><p>Search the curated fact set used by this project. Every result keeps its original NASA source link.</p></div>
+      <div class="fact-explorer-toolbar">
+        <input id="factSearch" type="search" placeholder="Search NASA facts..." aria-label="Search NASA facts">
+        <select id="factCategory"><option value="all">All categories</option></select>
+      </div>
+      <div id="factStatus" class="lab-status" aria-live="polite">Loading research vault…</div>
+      <div id="factGrid" class="fact-vault-grid"></div>
+    </section>
+
+
+    <section class="section panel" id="nasa-apod">
+      <div class="section-heading"><p class="eyebrow">16 / NASA Visual Evidence</p><h2>NASA Picture of the Day</h2><p>Use NASA's official Astronomy Picture of the Day feed as another visual research source. The card below loads the current entry when the browser can reach NASA's API.</p></div>
+      <div class="apod-card" id="apodCard">
+        <div class="apod-media"><div class="apod-placeholder">NASA APOD<br><span>Loading visual evidence…</span></div></div>
+        <div class="apod-copy"><p class="lab-status" id="apodStatus">Connecting to NASA APOD…</p><h3 id="apodTitle">Astronomy Picture of the Day</h3><p id="apodDescription">The latest NASA APOD description will appear here when available.</p><div class="evidence-actions"><a id="apodSource" class="btn btn-ghost small" href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener">Open NASA APOD ↗</a></div></div>
+      </div>
+    </section>
+
+    <section class="section creator" id="about">
+      <div class="creator-card">
+        <div class="creator-portrait"><img src="images/arinde-maurice.jpg" alt="Arinde Maurice in a library" loading="lazy"></div>
+        <div>
+          <p class="eyebrow">16 / The Creator</p>
+          <h2>Meet Arinde Maurice</h2>
+          <p class="creator-copy">
+            I am <strong>Arinde Maurice</strong>, a Computer Science student, a professional working with <strong>Simba Fiber</strong>, and an aspiring future <strong>MIT student</strong>. I built <em>Inspirations of the Universe</em> to combine my interests in technology, research, design and astronomy into one project that keeps growing as I learn.
+          </p>
+          <p class="creator-copy">
+            This project is both an astronomy learning platform and a demonstration of what I can build with code: interactive research, API integration, scientific visualization, responsive design and evidence-based storytelling in one growing portfolio.
+          </p>
+          <div class="creator-tags">
+            <span>💻 Computer Science</span>
+            <span>🌐 Technology</span>
+            <span>🔭 Astronomy</span>
+            <span>🚀 Research</span>
+            <span>🎓 MIT Aspirations</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel" id="sources">
+      <div class="section-heading"><p class="eyebrow">17 / Evidence & References</p><h2>NASA Reference Desk</h2><p>Every serious claim on this site should be traceable. These links take you to NASA repositories, NASA/JPL data services and astronomy references used to build the project.</p></div>
+      <div class="source-grid">
+        <a href="https://science.nasa.gov/solar-system/" target="_blank" rel="noopener"><strong>NASA Science</strong><span>Solar System and planetary facts</span></a>
+        <a href="https://images.nasa.gov/" target="_blank" rel="noopener"><strong>NASA Image & Video Library</strong><span>Official NASA imagery, video and audio collections</span></a>
+        <a href="https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf" target="_blank" rel="noopener"><strong>NASA Media API Docs</strong><span>Search NASA media programmatically from the website</span></a>
+        <a href="https://api.nasa.gov/" target="_blank" rel="noopener"><strong>NASA Open APIs</strong><span>APOD, NEO and other developer-facing NASA APIs</span></a>
+        <a href="https://data.nasa.gov/" target="_blank" rel="noopener"><strong>NASA Open Data</strong><span>Public NASA dataset metadata and archive links</span></a>
+        <a href="https://ssd.jpl.nasa.gov/horizons/" target="_blank" rel="noopener"><strong>NASA/JPL Horizons</strong><span>High-precision locations, motion and observability</span></a>
+        <a href="https://ssd-api.jpl.nasa.gov/" target="_blank" rel="noopener"><strong>JPL SSD/CNEOS API</strong><span>Machine-readable Solar System and near-Earth data</span></a>
+        <a href="https://www.timeanddate.com/astronomy/" target="_blank" rel="noopener"><strong>Timeanddate Astronomy</strong><span>Night sky, eclipses and observing tools</span></a>
+        <a href="https://www.esa.int/Science_Exploration/Space_Science" target="_blank" rel="noopener"><strong>European Space Agency</strong><span>Independent mission and planetary science reference</span></a>
+        <a href="https://github.com/cosinekitty/astronomy" target="_blank" rel="noopener"><strong>Astronomy Engine</strong><span>Client-side Sun, Moon and planet position, rise/set and phase calculations used by the dashboard</span></a>
+        <a href="https://aa.usno.navy.mil/data/api" target="_blank" rel="noopener"><strong>U.S. Naval Observatory</strong><span>Rise/set, seasons, phases and astronomical data</span></a>
+      </div>
+      <div class="contact-desk">
+        <div><strong>Verified repository contacts</strong><span>JPL Solar System Dynamics: <a href="mailto:contact-ssd@jpl.nasa.gov">contact-ssd@jpl.nasa.gov</a></span><span>JPL SSD/CNEOS API: <a href="mailto:contact-ssd-api@jpl.nasa.gov">contact-ssd-api@jpl.nasa.gov</a></span><span>NASA Open Data support: <a href="mailto:hq-open-innovation@mail.nasa.gov">hq-open-innovation@mail.nasa.gov</a></span></div>
+        <div><strong>API boundary</strong><span>NASA's Image & Video Library is browser-friendly. JPL SSD/CNEOS explicitly says its APIs should not be embedded directly in a website, so this site links to JPL data tools and reserves direct JPL requests for a future server-side backend.</span></div>
+        <div><strong>Research rule</strong><span>NASA imagery and data remain attributed to their published source. Your original interpretations are labeled as your findings, observations or project ideas. This site is an independent student project and does not imply NASA endorsement.</span></div>
+      </div>
+    </section>
+    <section class="section motion-cta" id="motion-cta">
+      <div>
+        <p class="eyebrow">Visual Observatory</p>
+        <h2>Watch the universe move.</h2>
+        <p>The Cosmic Motion Lab is a separate visual page with a single back key, planetary orbits and a conceptual galaxy-interaction scene.</p>
+      </div>
+      <a class="btn btn-primary" href="motion.html">Open Cosmic Motion Lab →</a>
+    </section>
+
+    <section class="cta-section">
+      <div>
+        <p class="eyebrow">The project continues</p>
+        <h2>From curiosity to code.</h2>
+        <p>Built as an evolving portfolio project by Arinde Maurice.</p>
+      </div>
+      <a class="btn btn-primary" href="#home">Back to top ↑</a>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>Inspirations of the Universe</strong>
+      <span>by Arinde Maurice</span>
+    </div>
+    <p>Educational astronomy project • © <span id="year"></span> Arinde Maurice</p>
+  </footer>
+
+  <div class="modal" id="imageModal" aria-hidden="true">
+    <button class="modal-close" id="modalClose" aria-label="Close image">×</button>
+    <img id="modalImage" src="" alt="" />
+    <p id="modalCaption"></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
